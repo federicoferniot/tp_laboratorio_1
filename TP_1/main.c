@@ -2,12 +2,15 @@
 #include <stdlib.h>
 #include "funciones.h"
 
+int factorial(int a);
+
 int main()
 {
     char seguir='s';
     int opcion=0;
-    float primerOperando;
-    float segundoOperando;
+    int primerOperando;
+    int segundoOperando;
+    float resultado;
 
     while(seguir=='s')
     {
@@ -27,21 +30,31 @@ int main()
         {
             case 1:
                 printf("Ingrese el primer operando\n");
-                scanf("%f", &primerOperando);
+                scanf("%d", &primerOperando);
                 break;
             case 2:
                 printf("Ingrese el segundo operando\n");
-                scanf("%f", &segundoOperando);
+                scanf("%d", &segundoOperando);
                 break;
             case 3:
+                resultado = sumar(primerOperando, segundoOperando);
+                printf("%g\n", resultado);
                 break;
             case 4:
+                resultado = restar(primerOperando, segundoOperando);
+                printf("%g\n", resultado);
                 break;
             case 5:
+                resultado = dividir(primerOperando, segundoOperando);
+                printf("%g\n", resultado);
                 break;
             case 6:
+                resultado = multiplicar(primerOperando, segundoOperando);
+                printf("%g\n", resultado);
                 break;
             case 7:
+                resultado = factorial(primerOperando);
+                printf("%g\n", resultado);
                 break;
             case 8:
                 break;
@@ -52,4 +65,19 @@ int main()
     }
 
     return 0;
+}
+
+int factorial(int a)
+{
+    int contador;
+    int resultado=1;
+    if(a!=0)
+    {
+        for(contador=a;contador>1;contador--)
+        {
+            resultado*=contador;
+        }
+    }
+    return resultado;
+
 }
