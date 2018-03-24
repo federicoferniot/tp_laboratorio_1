@@ -6,6 +6,8 @@ int main()
 {
     char seguir='s';
     int opcion=0;
+    float primerOperando;
+    float segundoOperando;
 
     while(seguir=='s')
     {
@@ -24,8 +26,12 @@ int main()
         switch(opcion)
         {
             case 1:
+                printf("Ingrese el primer operando\n");
+                scanf("%f", &primerOperando);
                 break;
             case 2:
+                printf("Ingrese el segundo operando\n");
+                scanf("%f", &segundoOperando);
                 break;
             case 3:
                 break;
