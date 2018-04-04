@@ -1,25 +1,33 @@
 #ifndef FUNCIONES_H_INCLUDED
 #define FUNCIONES_H_INCLUDED
 
-int sumar(int a, int b)
-{
-    return a+b;
-}
+/** Suma dos numeros enteros y guarda el resultado de la operacion en resultado
+ *
+ * Si no hubo errores devuelve 0.
+ * En caso de error de overflow devuelve -1.
+ */
+int sumarEnteros(int primerNumero, int segundoNumero, float* resultado);
 
-int restar(int a, int b)
-{
-    return a-b;
-}
+/** Resta dos numeros enteros y guarda el resultado de la operacion en resultado
+ *
+ * Si no hubo errores devuelve 0.
+ * En caso de error de overflow devuelve -1.
+ */
+int restarEnteros(int primerNumero, int segundoNumero, float* resultado);
 
-float dividir(int a, int b)
-{
-    return (float)a/b;
-}
+/** Divide dos numeros enteros y guarda el resultado de la operacion en resultado
+ *
+ * Si no hubo errores devuelve 0.
+ * En caso de dar error al querer dividir por 0, devuelve -1.
+ */
+int dividirEnteros(int primerNumero, int segundoNumero, float* resultado);
 
-int multiplicar(int a, int b)
-{
-    return a*b;
-}
+/** Multiplica dos numeros enteros y guarda el resultado de la operacion en resultado
+ *
+ * Si no hubo errores devuelve 0.
+ * En caso de error de overflow devuelve -1.
+ */
+int multiplicarEnteros(int primerNumero, int segundoNumero, float* resultado);
 
 
 #endif // FUNCIONES_H_INCLUDED
