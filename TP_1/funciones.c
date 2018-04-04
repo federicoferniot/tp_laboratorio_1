@@ -6,7 +6,7 @@ int sumarEnteros(int primerNumero, int segundoNumero, float* resultado)
     long long resultadoCalculo;
     int retorno=-1;
 
-    resultadoCalculo = (long)primerNumero+segundoNumero;
+    resultadoCalculo = (long long)primerNumero+segundoNumero;
     if(resultadoCalculo<INT_MAX && resultadoCalculo>INT_MIN)
     {
         *resultado = resultadoCalculo;
@@ -17,10 +17,10 @@ int sumarEnteros(int primerNumero, int segundoNumero, float* resultado)
 
 int restarEnteros(int primerNumero, int segundoNumero, float* resultado)
 {
-    long resultadoCalculo;
+    long long resultadoCalculo;
     int retorno = -1;
 
-    resultadoCalculo = (long)primerNumero-segundoNumero;
+    resultadoCalculo = (long long)primerNumero-segundoNumero;
     if(resultadoCalculo<INT_MAX && resultadoCalculo>INT_MIN)
     {
         *resultado = resultadoCalculo;
@@ -42,10 +42,10 @@ int dividirEnteros(int primerNumero, int segundoNumero, float* resultado)
 
 int multiplicarEnteros(int primerNumero, int segundoNumero, float* resultado)
 {
-    long resultadoCalculo;
+    long long resultadoCalculo;
     int retorno=-1;
 
-    resultadoCalculo = primerNumero*segundoNumero;
+    resultadoCalculo = (long long)primerNumero*segundoNumero;
     if(resultadoCalculo<INT_MAX && resultadoCalculo>INT_MIN)
     {
         *resultado=resultadoCalculo;
