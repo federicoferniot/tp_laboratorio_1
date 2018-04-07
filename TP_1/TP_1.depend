@@ -1,12 +1,20 @@
 # depslib dependency file v1.0
-1522801749 source:d:\proyectos\tps\tp_1\main.c
+1523112435 source:d:\proyectos\tps\tp_1\main.c
 	<stdio.h>
 	<stdlib.h>
 	<limits.h>
 	"funciones.h"
+	"input.h"
 
 1522800040 d:\proyectos\tps\tp_1\funciones.h
 
-1522800496 source:d:\proyectos\tps\tp_1\funciones.c
+1522803709 source:d:\proyectos\tps\tp_1\funciones.c
 	<limits.h>
+
+1523110814 source:d:\proyectos\tps\tp_1\input.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1523110825 d:\proyectos\tps\tp_1\input.h
 

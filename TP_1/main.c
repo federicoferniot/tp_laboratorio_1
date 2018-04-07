@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <limits.h>
 #include "funciones.h"
+#include "input.h"
 
 int factorial(int primerNumero, unsigned long* resultado);
 void calcularYMostrarSuma(int primerOperando, int segundoOperando);
@@ -29,17 +30,16 @@ int main()
         printf("8- Calcular todas las operacione\n");
         printf("9- Salir\n");
 
+        fflush(stdin);
         scanf("%d",&opcion);
 
         switch(opcion)
         {
             case 1:
-                printf("Ingrese el primer operando\n");
-                scanf("%d", &primerOperando);
+                getInt(&primerOperando, "Ingrese el primer operando\n", "Error, debe ser un entero válido\n", INT_MIN, INT_MAX, 0);
                 break;
             case 2:
-                printf("Ingrese el segundo operando\n");
-                scanf("%d", &segundoOperando);
+                getInt(&segundoOperando, "Ingrese el segundo operando\n", "Error, debe ser un entero válido\n", INT_MIN, INT_MAX, 0);
                 break;
             case 3:
                 calcularYMostrarSuma(primerOperando, segundoOperando);
@@ -78,7 +78,7 @@ void calcularYMostrarSuma(int primerOperando, int segundoOperando)
 
     if(sumarEnteros(primerOperando, segundoOperando, &resultado)==0)
     {
-        printf("La suma es %f.0\n", resultado);
+        printf("La suma es %g\n", resultado);
     }
     else
     {
@@ -91,7 +91,7 @@ void calcularYMostrarResta(int primerOperando, int segundoOperando)
     float resultado;
     if(restarEnteros(primerOperando, segundoOperando, &resultado)==0)
     {
-        printf("La resta es %f.0\n", resultado);
+        printf("La resta es %g\n", resultado);
     }
     else
     {
