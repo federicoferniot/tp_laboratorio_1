@@ -24,6 +24,8 @@ int getValidString(char requestMessage[],char errorMessage[], char errorMessageL
 int getValidInt(char requestMessage[],char errorMessage[], int* input,int lowLimit, int hiLimit,int attemps);
 int getValidFloat(char requestMessage[],char errorMessage[], float* input,float lowLimit, float hiLimit,int attemps);
 
+int maxInt(int a, int b);
+
 void clearStdin(void);
 void pause(void);
 void clearScreen(void);

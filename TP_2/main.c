@@ -42,6 +42,7 @@ int main()
                 Persona_mostrar(personas, LEN_PER);
                 break;
             case 4:
+                Persona_graficarPorEdades(personas, LEN_PER);
                 break;
             case 5:
                 seguir = 'n';

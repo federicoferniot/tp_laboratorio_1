@@ -16,6 +16,7 @@ int Persona_mostrar(Persona* array,int limite);
 int Persona_alta(Persona* array,int limite);
 int Persona_baja(Persona* array,int limite, int id);
 int Persona_ordenarPorNombre(Persona* array,int limite, int orden);
+int Persona_graficarPorEdades(Persona* array, int limite);
 int Persona_buscarPorId(Persona* array,int limite, int id);
 int Persona_altaForzada(Persona* array,int limite,char* nombre,int edad, int dni);
 

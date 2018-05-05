@@ -376,6 +376,20 @@ int getValidFloat(char requestMessage[],char errorMessage[], float* input,float 
 
 }
 
+int maxInt(int a, int b)
+{
+    int retorno;
+    if(a>b)
+    {
+        retorno=a;
+    }
+    else
+    {
+        retorno=b;
+    }
+    return retorno;
+}
+
 
 /**
  * \brief Limpia el stdin, similar a fflush

@@ -5,7 +5,8 @@
 #include <limits.h>
 #include "Persona.h"
 #include "utn.h"
-
+#define EDAD_MENOR 18
+#define EDAD_MAYOR 35
 
 static int proximoId();
 static int buscarLugarLibre(Persona* array,int limite);
@@ -190,6 +191,67 @@ int Persona_buscarPorId(Persona* array,int limite, int id)
                 break;
             }
         }
+    }
+    return retorno;
+}
+
+
+int Persona_graficarPorEdades(Persona* array, int limite)
+{
+    int retorno=-1;
+    int i, maxCantidadEdad;
+    int contadorEdadMenor=0;
+    int contadorEdadMedia=0;
+    int contadorEdadMayor=0;
+    if(limite > 0 && array != NULL)
+    {
+        retorno=0;
+        for(i=0; i<limite; i++)
+        {
+            if(!array[i].isEmpty && array[i].edad<=EDAD_MENOR)
+            {
+                contadorEdadMenor++;
+            }
+            else if(!array[i].isEmpty && array[i].edad>EDAD_MENOR && array[i].edad<=EDAD_MAYOR)
+            {
+                contadorEdadMedia++;
+            }
+            else if(!array[i].isEmpty && array[i].edad>EDAD_MAYOR)
+            {
+                contadorEdadMayor++;
+            }
+        }
+        maxCantidadEdad=maxInt(contadorEdadMenor, contadorEdadMedia);
+        maxCantidadEdad=maxInt(maxCantidadEdad, contadorEdadMayor);
+
+        for(i=maxCantidadEdad;i>0;i--)
+        {
+            if(i<=contadorEdadMenor)
+            {
+                printf("  *  ");
+            }
+            else
+            {
+                printf("     ");
+            }
+            if(i<=contadorEdadMedia)
+            {
+                printf("  *  ");
+            }
+            else
+            {
+                printf("     ");
+            }
+            if(i<=contadorEdadMayor)
+            {
+                printf("  *  \n");
+            }
+            else
+            {
+                printf("     \n");
+            }
+        }
+        printf(" <%d %d-%d >%d",EDAD_MENOR,EDAD_MENOR,EDAD_MAYOR,EDAD_MAYOR);
     }
     return retorno;
 }
