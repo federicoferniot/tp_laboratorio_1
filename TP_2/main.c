@@ -7,12 +7,12 @@
 int main()
 {
     Persona personas[LEN_PER];
-    Persona_init(personas, LEN_PER);
+    persona_init(personas, LEN_PER);
 
-    Persona_altaForzada(personas, LEN_PER, "Pedro", 20, 37374994);
-    Persona_altaForzada(personas, LEN_PER, "Ana", 18, 37374993);
-    Persona_altaForzada(personas, LEN_PER, "Mario", 40, 24842334);
-    Persona_altaForzada(personas, LEN_PER, "Carla", 35, 34554656);
+    persona_altaForzada(personas, LEN_PER, "Pedro", 20, 37374994);
+    persona_altaForzada(personas, LEN_PER, "Ana", 18, 37374993);
+    persona_altaForzada(personas, LEN_PER, "Mario", 40, 24842334);
+    persona_altaForzada(personas, LEN_PER, "Carla", 35, 34554656);
 
     char seguir='s';
     int opcion=0;
@@ -31,18 +31,35 @@ int main()
         switch(opcion)
         {
             case 1:
-                Persona_alta(personas, LEN_PER);
+                if(persona_alta(personas, LEN_PER))
+                {
+                    printf("Hubo un error al dar de alta\n");
+                }
                 break;
             case 2:
-                getValidInt("\nIngrese el ID de la persona a borrar", "Eso no es un ID", &auxId, 0, 100000, 2);
-                Persona_baja(personas, LEN_PER, auxId);
+                if(!getValidInt("\nIngrese el ID de la persona a borrar", "Eso no es un ID", &auxId, 0, 100000, 2))
+                {
+                    if(persona_baja(personas, LEN_PER, auxId))
+                    {
+                        printf("Hubo un error al dar de baja\n");
+                    }
+                }
+                else
+                {
+                    printf("Hubo un error al ingresar el ID\n");
+                }
                 break;
             case 3:
-                Persona_ordenarPorNombre(personas, LEN_PER, 1);
-                Persona_mostrar(personas, LEN_PER);
+                if(!persona_ordenarPorNombre(personas, LEN_PER, 1))
+                {
+                    persona_mostrar(personas, LEN_PER);
+                }
                 break;
             case 4:
-                Persona_graficarPorEdades(personas, LEN_PER);
+                if(persona_graficarPorEdades(personas, LEN_PER))
+                {
+                    printf("Hubo un error al graficar\n");
+                }
                 break;
             case 5:
                 seguir = 'n';

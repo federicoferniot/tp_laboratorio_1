@@ -17,7 +17,7 @@ static int buscarLugarLibre(Persona* array,int limite);
  * \return int
  *
  */
-int Persona_init(Persona* array,int limite)
+int persona_init(Persona* array,int limite)
 {
     int retorno = -1;
     int i;
@@ -32,7 +32,14 @@ int Persona_init(Persona* array,int limite)
     return retorno;
 }
 
-int Persona_mostrar(Persona* array,int limite)
+/** \brief Muestra por pantalla cada persona dada de alta en el array
+ *
+ * \param array Persona*
+ * \param limite int
+ * \return int
+ *
+ */
+int persona_mostrar(Persona* array,int limite)
 {
     int retorno = -1;
     int i;
@@ -51,7 +58,14 @@ int Persona_mostrar(Persona* array,int limite)
     return retorno;
 }
 
-int Persona_alta(Persona* array,int limite)
+/** \brief Da de alta una persona, solicitando al usuario que ingrese los datos
+ *
+ * \param array Persona*
+ * \param limite int
+ * \return int
+ *
+ */
+int persona_alta(Persona* array,int limite)
 {
     int retorno = -1;
     int i;
@@ -103,11 +117,19 @@ int Persona_alta(Persona* array,int limite)
 }
 
 
-int Persona_baja(Persona* array,int limite, int id)
+/** \brief Da de baja una persona, pasando el id de la persona a dar de baja
+ *
+ * \param array Persona*
+ * \param limite int
+ * \param id int
+ * \return int
+ *
+ */
+int persona_baja(Persona* array,int limite, int id)
 {
     int retorno = 0;
-    int indiceAEliminar = Persona_buscarPorId(array, limite, id);
-    if(indiceAEliminar>0)
+    int indiceAEliminar = persona_buscarPorId(array, limite, id);
+    if(indiceAEliminar>=0)
     {
         array[indiceAEliminar].isEmpty = 1;
     }
@@ -119,7 +141,15 @@ int Persona_baja(Persona* array,int limite, int id)
 }
 
 
-int Persona_ordenarPorNombre(Persona* array,int limite, int orden)
+/** \brief Ordena el array de Persona, ordenando por nombre ascendiente o descendiente
+ *
+ * \param array Persona*
+ * \param limite int
+ * \param orden int
+ * \return int
+ *
+ */
+int persona_ordenarPorNombre(Persona* array,int limite, int orden)
 {
     int retorno = -1;
     int i;
@@ -130,6 +160,7 @@ int Persona_ordenarPorNombre(Persona* array,int limite, int orden)
     {
         do
         {
+            retorno=0;
             flagSwap = 0;
             for(i=0;i<limite-1;i++)
             {
@@ -176,7 +207,15 @@ static int proximoId()
 }
 
 
-int Persona_buscarPorId(Persona* array,int limite, int id)
+/** \brief Busca una persona por Id, devolviendo la posición en el array
+ *
+ * \param array Persona*
+ * \param limite int
+ * \param id int
+ * \return int
+ *
+ */
+int persona_buscarPorId(Persona* array,int limite, int id)
 {
     int retorno = -1;
     int i;
@@ -196,7 +235,14 @@ int Persona_buscarPorId(Persona* array,int limite, int id)
 }
 
 
-int Persona_graficarPorEdades(Persona* array, int limite)
+/** \brief Muestra un gráfico por pantalla, mostrando la cantidad de personas dadas de alta en distintos rangos de edades
+ *
+ * \param array Persona*
+ * \param limite int
+ * \return int
+ *
+ */
+int persona_graficarPorEdades(Persona* array, int limite)
 {
     int retorno=-1;
     int i, maxCantidadEdad;
@@ -208,11 +254,11 @@ int Persona_graficarPorEdades(Persona* array, int limite)
         retorno=0;
         for(i=0; i<limite; i++)
         {
-            if(!array[i].isEmpty && array[i].edad<=EDAD_MENOR)
+            if(!array[i].isEmpty && array[i].edad<EDAD_MENOR)
             {
                 contadorEdadMenor++;
             }
-            else if(!array[i].isEmpty && array[i].edad>EDAD_MENOR && array[i].edad<=EDAD_MAYOR)
+            else if(!array[i].isEmpty && array[i].edad>=EDAD_MENOR && array[i].edad<=EDAD_MAYOR)
             {
                 contadorEdadMedia++;
             }
@@ -256,7 +302,7 @@ int Persona_graficarPorEdades(Persona* array, int limite)
     return retorno;
 }
 
-int Persona_altaForzada(Persona* array,int limite,char* nombre,int edad, int dni)
+int persona_altaForzada(Persona* array,int limite,char* nombre,int edad, int dni)
 {
     int retorno = -1;
     int i;
