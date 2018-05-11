@@ -9,11 +9,6 @@ int main()
     Persona personas[LEN_PER];
     persona_init(personas, LEN_PER);
 
-    persona_altaForzada(personas, LEN_PER, "Pedro", 20, 37374994);
-    persona_altaForzada(personas, LEN_PER, "Ana", 18, 37374993);
-    persona_altaForzada(personas, LEN_PER, "Mario", 40, 24842334);
-    persona_altaForzada(personas, LEN_PER, "Carla", 35, 34554656);
-
     char seguir='s';
     int opcion=0;
     int auxId;
