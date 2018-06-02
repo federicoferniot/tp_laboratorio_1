@@ -10,7 +10,7 @@ EMovie* crearPelicula();
  *  @param movie la estructura a ser agregada al archivo
  *  @return retorna 1 o 0 de acuerdo a si pudo agregar la pelicula o no
  */
-int agregarPelicula(EMovie* movie);
+int agregarPelicula(ArrayList* pArrayPeliculas, EMovie* movie);
 
 /**
  *  Borra una pelicula del archivo binario
@@ -18,6 +18,8 @@ int agregarPelicula(EMovie* movie);
  *  @return retorna 1 o 0 de acuerdo a si pudo eliminar la pelicula o no
  */
 int borrarPelicula(ArrayList* pArrayPeliculas);
+
+int modificarPelicula(ArrayList* pArrayPeliculas);
 
 /**
  *  Genera un archivo html a partir de las peliculas cargadas en el archivo binario.

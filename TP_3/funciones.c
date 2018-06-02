@@ -5,7 +5,7 @@
 #include "movie.h"
 #include "utn.h"
 #include "ArrayList.h"
-#define CANT_PEL 20
+#include "parser.h"
 
 EMovie* crearPelicula(void)
 {
@@ -29,17 +29,12 @@ EMovie* crearPelicula(void)
     return NULL;
 }
 
-int agregarPelicula(EMovie* movie)
+int agregarPelicula(ArrayList* pArrayPeliculas, EMovie* movie)
 {
-    int retorno = -1;
-    FILE* peliculas = fopen("movies.bin", "ab");
-    if(peliculas != NULL)
-    {
-        fwrite(movie, sizeof(EMovie), 1, peliculas);
-        fclose(peliculas);
-        retorno = 0;
-    }
-    return retorno;
+    al_add(pArrayPeliculas, movie);
+    if(!guardarPeliculas(pArrayPeliculas))
+        return 0;
+    return -1;
 }
 
 
@@ -47,10 +42,10 @@ int borrarPelicula(ArrayList* pArrayPeliculas)
 {
     int retorno = -1;
     int i;
-    char titulo[20];
-    char tituloABorrar[20];
+    char titulo[50];
+    char tituloABorrar[50];
     EMovie* auxPelicula;
-    if(!getValidString("\nIngrese el titulo a borrar\n", "\nEso no es un titulo","\nEl maximo es 20", tituloABorrar, 20,2))
+    if(!getValidString("\nIngrese el titulo a borrar\n", "\nEso no es un titulo","\nEl maximo es 50", tituloABorrar, 50,2))
     {
         for(i=0; i<al_len(pArrayPeliculas);i++)
         {
@@ -62,6 +57,7 @@ int borrarPelicula(ArrayList* pArrayPeliculas)
                 retorno = 0;
                 auxPelicula = al_pop(pArrayPeliculas, i);
                 movie_delete(auxPelicula);
+                guardarPeliculas(pArrayPeliculas);
                 break;
             }
         }
@@ -69,19 +65,48 @@ int borrarPelicula(ArrayList* pArrayPeliculas)
     return retorno;
 }
 
-int guardarPeliculas(ArrayList* pArrayPeliculas)
+int modificarPelicula(ArrayList* pArrayPeliculas)
 {
-    int i;
     int retorno = -1;
-    FILE* peliculas = fopen("movies.bin", "w");
-    if(peliculas != NULL)
+    int i;
+    char titulo[50];
+    char tituloAModificar[50];
+    char genero[30];
+    int duracion;
+    char descripcion[256];
+    int puntaje;
+    char linkImg[256];
+    EMovie* auxPelicula;
+    if(!getValidString("\nIngrese el titulo a modificar\n", "\nEso no es un titulo","\nEl maximo es 50", tituloAModificar, 50,2))
     {
         for(i=0; i<al_len(pArrayPeliculas);i++)
         {
-            fwrite(al_get(pArrayPeliculas, i), sizeof(EMovie), 1, peliculas);
+            movie_getTitulo(al_get(pArrayPeliculas, i), titulo);
+            toLowerCase(tituloAModificar);
+            toLowerCase(titulo);
+            if(!strcmp(tituloAModificar, titulo))
+            {
+                auxPelicula = al_get(pArrayPeliculas, i);
+                if(!getValidString("\nIngrese el titulo\n", "\nEso no es un titulo","\nEl maximo es 50", titulo, 50,2))
+                    if(!getValidString("\nIngrese el genero\n","\nEso no es un genero\n","\El maximo es 30", genero, 30,2))
+                        if(!getValidInt("\nIngrese la duracion\n","\nEso no es una duracion", &duracion, 0, 1440,2))
+                            if(!getValidString("\nIngrese la descripcion\n","\nEso no es una descripcion\n", "El maximo es 256", descripcion, 256,2))
+                                if(!getValidInt("\nIngrese el puntaje[0-10]\n", "\nEso no es un puntaje\n", &puntaje, 0, 10, 2))
+                                    if(!getValidStringLink("\nIngrese el link de la imagen\n", "\nEso no es un link\n", "\nEl maximo es 256", linkImg, 256, 2))
+                                    {
+                                        retorno = 0;
+                                        movie_setTitulo(auxPelicula, titulo);
+                                        movie_setGenero(auxPelicula, genero);
+                                        movie_setDuracion(auxPelicula, duracion);
+                                        movie_setDescripcion(auxPelicula, descripcion);
+                                        movie_setPuntaje(auxPelicula, puntaje);
+                                        movie_setLinkImg(auxPelicula, linkImg);
+                                    }
+                guardarPeliculas(pArrayPeliculas);
+                break;
+            }
         }
-        fclose(peliculas);
-        retorno = 0;
     }
     return retorno;
 }
+

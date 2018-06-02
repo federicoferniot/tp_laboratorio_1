@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include "parser.h"
 #include "ArrayList.h"
 #include "paginaWeb.h"
 #include "funciones.h"
@@ -14,6 +15,8 @@ int main()
     int opcion;
 
     EMovie* auxMovie;
+
+    cargarPeliculas(pArrayMovies);
 
     while(seguir=='s')
     {
@@ -32,14 +35,14 @@ int main()
                 auxMovie = crearPelicula();
                 if(auxMovie != NULL)
                 {
-                    al_add(pArrayMovies, auxMovie);
-                    agregarPelicula(auxMovie);
+                    agregarPelicula(pArrayMovies, auxMovie);
                 }
                 break;
             case 2:
                 borrarPelicula(pArrayMovies);
                 break;
             case 3:
+                modificarPelicula(pArrayMovies);
                break;
             case 4:
                 generarPaginaWeb("pagina.html", pArrayMovies );

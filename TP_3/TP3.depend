@@ -124,3 +124,67 @@
 1527893095 c:\users\feder\desktop\tp\tp_laboratorio_1\tp3\paginaweb.h
 	"movie.h"
 
+1527823980 source:c:\users\feder\desktop\tp\tp_laboratorio_1\tp_3\movie.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"movie.h"
+
+1527897487 c:\users\feder\desktop\tp\tp_laboratorio_1\tp_3\movie.h
+
+1527897808 source:c:\users\feder\desktop\tp\tp_laboratorio_1\tp_3\paginaweb.c
+	<stdio.h>
+	<stdlib.h>
+	"ArrayList.h"
+	"movie.h"
+	"paginaWeb.h"
+
+1527802593 c:\users\feder\desktop\tp\tp_laboratorio_1\tp_3\arraylist.h
+
+1527893095 c:\users\feder\desktop\tp\tp_laboratorio_1\tp_3\paginaweb.h
+	"movie.h"
+
+1527896726 source:c:\users\feder\desktop\tp\tp_laboratorio_1\tp_3\utn.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<string.h>
+	<ctype.h>
+	"utn.h"
+
+1527896689 c:\users\feder\desktop\tp\tp_laboratorio_1\tp_3\utn.h
+
+1527900028 source:c:\users\feder\desktop\tp\tp_laboratorio_1\tp_3\main.c
+	<stdio.h>
+	<stdlib.h>
+	"parser.h"
+	"ArrayList.h"
+	"paginaWeb.h"
+	"funciones.h"
+	"movie.h"
+	"utn.h"
+
+1527899058 c:\users\feder\desktop\tp\tp_laboratorio_1\tp_3\funciones.h
+	"movie.h"
+	"ArrayList.h"
+
+1527899230 source:c:\users\feder\desktop\tp\tp_laboratorio_1\tp_3\funciones.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"funciones.h"
+	"movie.h"
+	"utn.h"
+	"ArrayList.h"
+
+1527900399 source:c:\users\feder\desktop\tp\tp_laboratorio_1\tp_3\parser.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"parser.h"
+	"ArrayList.h"
+	"movie.h"
+
+1527900043 c:\users\feder\desktop\tp\tp_laboratorio_1\tp_3\parser.h
+	"ArrayList.h"
+
