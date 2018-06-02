@@ -155,13 +155,19 @@ int esAlfaNumerico(char str[])
    int i=0;
    while(str[i] != '\0')
    {
-       if((str[i] != ' ') && (str[i] < 'a' || str[i] > 'z') && (str[i] < 'A' || str[i] > 'Z') && (str[i] < '0' || str[i] > '9'))
+       if((str[i] != ' ') && (str[i] != '.') && (str[i] < 'a' || str[i] > 'z') && (str[i] < 'A' || str[i] > 'Z') && (str[i] < '0' || str[i] > '9'))
            return 0;
        i++;
    }
    return 1;
 }
 
+/**
+ *  Verifica si el valor recibido no contiene espacios
+ * \param str char*
+ * \return int
+ *
+ */
 int esLink(char* str)
 {
     int i=0;
@@ -174,6 +180,12 @@ int esLink(char* str)
     return 1;
 }
 
+/**
+ *  Verifica si el valor recibido es una letra
+ * \param c char
+ * \return int
+ *
+ */
 int esLetra(char c)
 {
     if( (c>='a' && c<='z') || (c>='A' && c<='Z'))
@@ -182,6 +194,12 @@ int esLetra(char c)
         return 0;
 }
 
+/**
+ *  Transforma los caracteres en mayuscula de la cadena a minuscula
+ * \param str char*
+ * \return void
+ *
+ */
 void toLowerCase(char* str)
 {
     int i=0;

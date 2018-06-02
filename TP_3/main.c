@@ -2,7 +2,6 @@
 #include <stdlib.h>
 #include "parser.h"
 #include "ArrayList.h"
-#include "paginaWeb.h"
 #include "funciones.h"
 #include "movie.h"
 #include "utn.h"
@@ -35,21 +34,26 @@ int main()
                 auxMovie = crearPelicula();
                 if(auxMovie != NULL)
                 {
-                    agregarPelicula(pArrayMovies, auxMovie);
+                    if(agregarPelicula(pArrayMovies, auxMovie))
+                       printf("\nHubo un error");
                 }
                 break;
             case 2:
-                borrarPelicula(pArrayMovies);
+                if(borrarPelicula(pArrayMovies))
+                    printf("\nHubo un error");
                 break;
             case 3:
-                modificarPelicula(pArrayMovies);
+                if(modificarPelicula(pArrayMovies))
+                    printf("\nHubo un error");
                break;
             case 4:
-                generarPaginaWeb("pagina.html", pArrayMovies );
+                generarPagina(pArrayMovies );
                 break;
             case 5:
                 seguir = 'n';
                 break;
+            default:
+                printf("\nOpcion incorrecta");
         }
         clearStdin();
     }

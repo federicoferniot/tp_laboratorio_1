@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include "ArrayList.h"
 #include "movie.h"
 #include "paginaWeb.h"
@@ -7,10 +8,10 @@
 static void escribirPelicula(FILE* pFile, EMovie* pelicula);
 static int copiarTemplate(char* rutaNueva);
 
-int generarPaginaWeb(char* path, ArrayList* pArrayPeliculas)
+int generarPaginaWeb(char* nombre, ArrayList* pArrayPeliculas)
 {
     int retorno = -1;
-    if(!copiarTemplate(path))
+    if(!copiarTemplate(nombre))
     {
         int i;
         FILE* pFile = fopen("archivos\\peliculas.html", "w");
@@ -32,7 +33,7 @@ static int copiarTemplate(char* path)
     int retorno = -1;
     int caracter;
     FILE* templateMovie = fopen("archivos\\template.html", "r");
-    FILE* nuevaPagina = fopen(path, "w");
+    FILE* nuevaPagina = fopen(strcat(path,".html"), "w");
 
     if(templateMovie != NULL && nuevaPagina != NULL)
     {
@@ -81,9 +82,9 @@ static void escribirPelicula(FILE* pFile, EMovie* pelicula)
     fprintf(pFile, "\t\t<a href='#'>%s</a>\n", titulo);
     fprintf(pFile, "\t</h3>\n");
     fprintf(pFile, "\t<ul>\n");
-    fprintf(pFile, "\t\t<li>Género:%s</li>\n", genero);
+    fprintf(pFile, "\t\t<li>G&eacutenero:%s</li>\n", genero);
     fprintf(pFile, "\t\t<li>Puntaje:%d</li>\n", puntaje);
-    fprintf(pFile, "\t\t<li>Duración:%d</li>\n", duracion);
+    fprintf(pFile, "\t\t<li>Duraci&oacuten:%d</li>\n", duracion);
     fprintf(pFile, "\t</ul>\n");
     fprintf(pFile, "\t<p>%s</p>\n", descripcion);
     fprintf(pFile, "</article>\n");

@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include "movie.h"
+#include "utn.h"
 
 int validarGenero(char* genero);
 int validarLinkImg(char* linkImg);
@@ -39,7 +40,7 @@ void movie_delete(EMovie* this)
 int movie_setTitulo(EMovie* this,char* titulo)
 {
     int retorno = -1;
-    if(this != NULL && validarTitulo(titulo))
+    if(this != NULL && titulo != NULL && validarTitulo(titulo))
     {
         strcpy(this->titulo, titulo);
         retorno = 0;
@@ -50,7 +51,7 @@ int movie_setTitulo(EMovie* this,char* titulo)
 int movie_setGenero(EMovie* this,char* genero)
 {
     int retorno = -1;
-    if(this != NULL && validarGenero(genero))
+    if(this != NULL && genero != NULL && validarGenero(genero))
     {
         strcpy(this->genero, genero);
         retorno = 0;
@@ -72,7 +73,7 @@ int movie_setDuracion(EMovie* this,int duracion)
 int movie_setDescripcion(EMovie* this,char* descripcion)
 {
     int retorno = -1;
-    if(this != NULL && validarDescripcion(descripcion))
+    if(this != NULL && descripcion != NULL && validarDescripcion(descripcion))
     {
         strcpy(this->descripcion, descripcion);
         retorno = 0;
@@ -94,7 +95,7 @@ int movie_setPuntaje(EMovie* this,int puntaje)
 int movie_setLinkImg(EMovie* this,char* linkImg)
 {
     int retorno = -1;
-    if(this != NULL && validarLinkImg(linkImg))
+    if(this != NULL && linkImg != NULL && validarLinkImg(linkImg))
     {
         strcpy(this->linkImg, linkImg);
         retorno = 0;
@@ -170,22 +171,22 @@ int movie_getLinkImg(EMovie* this,char* linkImg)
 
 int validarTitulo(char* titulo)
 {
-    return 1;
+    return esAlfaNumerico(titulo);
 }
 
-int validarDescripcion(char* titulo)
+int validarDescripcion(char* descripcion)
 {
-    return 1;
+    return esAlfaNumerico(descripcion);
 }
 
 int validarLinkImg(char* linkImg)
 {
-    return 1;
+    return esLink(linkImg);
 }
 
 int validarGenero(char* genero)
 {
-    return 1;
+    return esAlfaNumerico(genero);
 }
 
 int validarDuracion(int duracion)
