@@ -1,0 +1,126 @@
+# depslib dependency file v1.0
+1527811553 source:d:\fferniot\clase21\cliente.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"ArrayList.h"
+	"cliente.h"
+
+1527802593 d:\fferniot\clase21\arraylist.h
+
+1527811547 d:\fferniot\clase21\cliente.h
+
+1527812900 source:d:\fferniot\clase21\main.c
+	<stdio.h>
+	<stdlib.h>
+	"ArrayList.h"
+	"Cliente.h"
+	"parser.h"
+
+1527812915 d:\fferniot\clase21\parser.h
+
+1527813809 source:d:\fferniot\clase21\parser.c
+	<stdio.h>
+	<stdlib.h>
+	"ArrayList.h"
+	"parser.h"
+	"Cliente.h"
+
+1527811553 source:c:\users\feder\desktop\clase21\cliente.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"ArrayList.h"
+	"cliente.h"
+
+1527802593 c:\users\feder\desktop\clase21\arraylist.h
+
+1527811547 c:\users\feder\desktop\clase21\cliente.h
+
+1527812900 source:c:\users\feder\desktop\clase21\main.c
+	<stdio.h>
+	<stdlib.h>
+	"ArrayList.h"
+	"Cliente.h"
+	"parser.h"
+
+1527812915 c:\users\feder\desktop\clase21\parser.h
+
+1527813972 source:c:\users\feder\desktop\clase21\parser.c
+	<stdio.h>
+	<stdlib.h>
+	"ArrayList.h"
+	"parser.h"
+	"Cliente.h"
+
+1527811553 source:c:\users\feder\desktop\tp\tp_laboratorio_1\tp3\cliente.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"ArrayList.h"
+	"cliente.h"
+
+1527802593 c:\users\feder\desktop\tp\tp_laboratorio_1\tp3\arraylist.h
+
+1527811547 c:\users\feder\desktop\tp\tp_laboratorio_1\tp3\cliente.h
+
+1527813972 source:c:\users\feder\desktop\tp\tp_laboratorio_1\tp3\parser.c
+	<stdio.h>
+	<stdlib.h>
+	"ArrayList.h"
+	"parser.h"
+	"Cliente.h"
+
+1527812915 c:\users\feder\desktop\tp\tp_laboratorio_1\tp3\parser.h
+
+1527897574 source:c:\users\feder\desktop\tp\tp_laboratorio_1\tp3\funciones.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"funciones.h"
+	"movie.h"
+	"utn.h"
+	"ArrayList.h"
+
+1527895185 c:\users\feder\desktop\tp\tp_laboratorio_1\tp3\funciones.h
+	"movie.h"
+	"ArrayList.h"
+
+1527897487 c:\users\feder\desktop\tp\tp_laboratorio_1\tp3\movie.h
+
+1527896689 c:\users\feder\desktop\tp\tp_laboratorio_1\tp3\utn.h
+
+1527895547 source:c:\users\feder\desktop\tp\tp_laboratorio_1\tp3\main.c
+	<stdio.h>
+	<stdlib.h>
+	"ArrayList.h"
+	"parser.h"
+	"paginaWeb.h"
+	"funciones.h"
+	"movie.h"
+	"utn.h"
+
+1527823980 source:c:\users\feder\desktop\tp\tp_laboratorio_1\tp3\movie.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"movie.h"
+
+1527896726 source:c:\users\feder\desktop\tp\tp_laboratorio_1\tp3\utn.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<string.h>
+	<ctype.h>
+	"utn.h"
+
+1527897808 source:c:\users\feder\desktop\tp\tp_laboratorio_1\tp3\paginaweb.c
+	<stdio.h>
+	<stdlib.h>
+	"ArrayList.h"
+	"movie.h"
+	"paginaWeb.h"
+
+1527893095 c:\users\feder\desktop\tp\tp_laboratorio_1\tp3\paginaweb.h
+	"movie.h"
+
